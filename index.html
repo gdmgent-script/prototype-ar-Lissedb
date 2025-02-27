@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>politie en boefje</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/stijlblad.css">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+
+     <div class="button-container">
+        <button class="button red" onclick="window.location.href='rvraag1.html';"></button>
+        <button class="button green" onclick="window.location.href='gvraag1.html'"></button>
+        <button class="button blue" onclick="window.location.href='bvraag1.html'"></button>
+    </div>
+
+    <div class="model-container">
+        <a-scene embedded>
+            <a-assets>
+                <a-asset-item id="thiefmodel" src="thief.glb"></a-asset-item>
+            </a-assets>
+            <a-entity 
+                gltf-model="#thiefmodel"
+                position="0 1 -5"
+                scale="4 4 4"
+                rotation="0 0 0"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
+            </a-entity>
+            <a-entity camera position="0 1.6 3"></a-entity>
+        </a-scene>
+    </div>
+
+    <button class="camera-button" oncli

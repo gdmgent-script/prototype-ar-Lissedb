@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Pagina</title>
+    <link rel="stylesheet" href="camera.css">
+</head>
+<body>
+
+    <!-- Videofeed van de camera -->
+    <video id="camera-stream" autoplay playsinline></video>
+
+    <!-- Knop om terug te gaan naar index.html -->
+    <button class="back-button" onclick="window.location.href='index.html';">Terug</button>
+
+    <script>
+        async function startCamera() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                document.getElementById('camera-stream').srcObject = stream;
+            } catch (error) {
+                console.error("Camera toegang geweigerd of niet beschikbaar:", error);
+            }
+        }
+        startCamera();
+    </script>
+
+</body>
+</html>
